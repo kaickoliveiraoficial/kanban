@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>KanBan</title>
+    <link rel="icon" href="/assets/logo.svg" type="image/svg" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <nav>
+        <img src="assets/logo.svg" class="logo" />
+      </nav>
+
+      <main>
+        <div class="inner">
+          <section class="title-avatar">
+            <h1 class="workspace">
+              Meu Kanban
+              <button onclick="changeElement()">
+                <img src="assets/pencil.svg" class="pencil"/>
+              </button>
+            </h1>
+            <button onclick="changeElementAvatar()">
+              <img
+                src="/assets/profile.svg"
+                alt="avatar"
+                class="profile-pic-page"
+                id="profile-pic"
+              />
+            </button>
+          </section>
+
+          <div class="change-avatar">
+            <div class="title-x-avatar">
+              <span>Mude sua foto de perfil</span>
+              <button onclick="closeDiv()" class="avatar-x">
+                <ion-icon name="close-circle"></ion-icon>
+              </button>
+            </div>
+
+            <div class="input-wrapper-avatar">
+              <img
+                class="profile-pic"
+                src="/assets/profile.svg"
+                alt="avatar"
+                id="profile-pic"
+              />
+              <label for="change-avatar-input">Selecionar imagem</label>
+              <input
+                class="change-avatar-input"
+                type="file"
+                accept="image/jpeg, image/png, image/jpg, image/svg"
+                id="change-avatar-input"
+              />
+            </div>
+
+            <button onclick="closeAfterSave()" class="change-avatar-button">
+              <span>Salvar</span>
+            </button>
+          </div>
+
+          <div class="change-workspace">
+            <div class="title-x-change">
+              <span>Mude o seu workspace</span>
+              <button onclick="closeDiv()" class="change-x">
+                <ion-icon name="close-circle"></ion-icon>
+              </button>
+            </div>
+            <input class="input-change" type="text" placeholder="Meu Kanban" />
+
+            <button class="change-button">
+              <span>Mudar</span>
+            </button>
+          </div>
+
+          <div class="blur-background"></div>
+
+          <section class="add">
+            <button onclick="addElement()" class="add-button">
+              <ion-icon name="add-circle-outline"></ion-icon>
+              <span>Novo</span>
+            </button>
+
+            <div class="input-wrapper">
+              <div class="title-x-add">
+                <span>Adicionar card</span>
+                <button onclick="closeDiv()" class="add-x">
+                  <ion-icon name="close-circle"></ion-icon>
+                </button>
+              </div>
+              <span>Título</span>
+              <input
+                class="input-h3"
+                type="text"
+                placeholder="Ex: Fazer bolo"
+                name=""
+                id="input"
+              />
+              <span>Conteúdo</span>
+              <input
+                class="input-p"
+                type="text"
+                placeholder="Ex: Comprar leite, ovos e farinha"
+                name=""
+                id="input"
+              />
+
+              <button class="add-card">
+                <span>Adicionar</span>
+              </button>
+            </div>
+          </section>
+
+          <!-- section.kanban -->
+          <section class="kanban">
+            <!-- To do -->
+            <div class="todo">
+              <!-- boards -->
+              <h2>A fazer</h2>
+              <!-- h3 -->
+              <div class="cards"></div>
+            </div>
+
+            <!-- Doing -->
+            <div class="doing">
+              <h2>Fazendo</h2>
+              <div class="cards"></div>
+            </div>
+
+            <!-- Done -->
+            <div class="done">
+              <h2>Feito</h2>
+              <div class="cards"></div>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+  <script src="script.js"></script>
+</html>
